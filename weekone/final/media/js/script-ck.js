@@ -1,0 +1,1 @@
+$(document).ready(function(){console.log("Q3 Portfolio Script Loaded");$(".about-img").hover(function(){$(this).attr("src","media/img/face2.jpg")},function(){$(this).attr("src","media/img/face3.png")})});

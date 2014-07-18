@@ -1,0 +1,335 @@
+/* _________________________________________
+CONTENT:	Quarter 3 Portifolio
+AUTHOR:		Praeophan Khongkraphan
+____________________________________________
+
+TABLE OF CONTENTS:
+
+1. typography.
+2. base.
+3. content
+
+
+========================================================== */
+
+/* 1. TYPOGRAPHY  ======================================== */
+
+@font-face {
+	  font-family: 'MavenProLight-100';
+	  src: url('../fonts/MavenProLight-100.otf');
+	       font-weight: normal;
+	       font-style: normal;
+}
+@font-face {
+	  font-family: 'MavenProLight-200';
+	  src: url('../fonts/MavenProLight-200.otf');
+	       font-weight: normal;
+	       font-style: normal;
+}
+@font-face {
+	  font-family: 'MavenProLight-300';
+	  src: url('../fonts/MavenProLight-300.otf');
+	       font-weight: normal;
+	       font-style: normal;
+}
+
+/*BASE*/
+
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+
+body,
+html {
+	color: #000;
+	font-size: 1em;
+	margin: 0 auto;
+	padding: 0;
+	font-family: 'MavenProLight-300';
+	width: 100%;
+	height: auto;
+
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+.clearfix:after {
+	clear: both;
+	display: table;
+	content: '';
+	font-size: 0;
+}
+
+h1,h2,h3,h4,h5,h6, p {
+	font-family: 'MavenProLight-200', Georgia, Sans-serif;
+	font-size: 1em;
+	color: #000;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	position: relative;
+	color: #000;
+
+	}
+a:hover {
+	color: #fff;
+}
+
+li {
+	list-style: none;
+}
+
+
+/* 	small ============================================== */
+@media only screen and (min-width: 320px){	
+
+	/* =============== header ================= */
+
+	header {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		background: #141414;
+		padding: 20px 0 0 0;
+		z-index: 9999;
+		border: 0 none;
+		overflow: hidden;
+	}
+
+	#logo h1{
+		position: relative;
+		width: 100%;
+		height: auto;
+		color: #d9d9d9;
+		font-size: 3em;
+		left: auto;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.title {
+		font-family: 'MavenProLight-300', arial, Sans-serif;
+		font-size: 1.5em;
+		text-transform: uppercase;
+	}
+
+	#headerTitles {
+		color: #d9d9d9;
+		text-align: center;
+		font-family: 'MavenProLight-300';
+		width: 80%;
+		margin: 34px auto 0 auto;
+		line-height: 27px;
+	}
+/* =========== Primary navigation ============= */
+	
+	#menu {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: auto;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		text-align: center;
+		padding: 5% 0;
+		overflow: visible;
+	}
+
+	#menu li a {
+		font-size: .8em;		
+		font-family: 'MavenProLight-300';
+		letter-spacing: 1px;
+		color: #d9d9d9;
+		text-transform: uppercase;
+		padding: 0 0 5px 0;
+		opacity: 0.99;
+	}
+	
+	#menu li a.selected {
+		color: #d9d9d9;
+		border-bottom: 1px solid #d9d9d9;
+	}
+
+	#menu li a:hover {
+		color: #ffffff;
+		border-bottom: 1px solid #ffffff;
+	}
+	.edging {
+		background: #242424;
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 10px;
+		top: auto;
+		right: auto;
+		bottom: 0px;
+		left: 0px;
+		z-index: 9999;
+	}
+/* =============== SECTIONS ================= */
+	
+	.about-img {
+		width: 60%;
+		margin: 0 auto;
+		-webkit-transition: .5s all;
+	}
+
+
+
+
+
+/* =============== about ================= */
+	.main-container {
+		padding: 55px 0 35px 0;
+		overflow: hidden;
+		background: #ebebeb;
+	}
+
+	.page-title,
+	.project-title {
+		text-align: center;
+		text-transform: uppercase;
+		color: #999999;
+		letter-spacing: 1px;
+		margin: 0 0 10px 0;
+	}
+
+	.page-title {
+		font-size: 1.3em;
+	}
+
+	section {
+		width: 100%;
+		height: auto;
+		margin: 5% 0;
+		padding: 0 10%;
+	}
+
+	section img {
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+		padding: 0;
+		-webkit-box-shadow: 3px 3px 15px 0px rgba(50, 50, 50, 0.5);
+		-moz-box-shadow:    3px 3px 15px 0px rgba(50, 50, 50, 0.5);
+		box-shadow:         3px 3px 15px 0px rgba(50, 50, 50, 0.5);
+	}
+/* =============== footer ================= */
+	footer {
+		background-color: #141414;
+		width: 100%;
+		height: 10px;
+	}
+}
+/* 	large ============================================== */
+@media only screen and (min-width: 768px) {
+/* ================ HOME =================== 	
+	
+	
+
+/* =============== header ================= */
+	header {
+		display: block;
+		position: relative;
+		width: 100%;
+		height: 350px;
+		top: auto;
+		right: auto;
+		bottom: auto;
+		left: auto;
+		background: #141414;
+		padding: 20px 0 0 0;
+		z-index: 9999;
+		border: 0 none;
+		overflow: hidden;
+		webkit-transition: 1s ease-in-out;
+	}
+
+	#logo h1 {
+		font-size: 4em;
+	}
+
+	.title {
+		font-size: 2.5em;
+	}
+
+
+/* ============= Primary navigation =============== */
+	#menu {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: auto;
+		right: auto;
+		bottom: -40px;
+		left: 0px;
+		z-index: 1000;
+		background: #141414;
+	}
+	#menu li {
+		display: inline;
+		margin: 0 10px;
+		border: 0 none;
+	}
+	
+	
+	
+/* =================== ABOUT =================== */
+
+	.about p {
+		color: #141414;
+	}
+
+	.about-img {
+		width: 33%;
+		margin: 0 33.5%;
+		-webkit-transition: .5s all;
+
+	}
+	
+	.animation,
+	.design,
+	.development,
+	.motion {
+		float: left;
+		width: 80%;
+		height: auto;
+		margin: 5% 10%;
+	}
+/* =============== footer ================= */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
