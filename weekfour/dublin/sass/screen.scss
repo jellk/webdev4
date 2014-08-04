@@ -1,0 +1,584 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+@import "normalize";
+
+
+//Variables
+/* UTILITY CLASSES */
+
+$bg-primary: #e7e8ea;/* gray */
+$bg-secondary: #3b3b4c; /* navy */
+$txt-1: #fff;/* white */
+$txt-2: #161628;/* dark navy */
+$txt-3: #e7e8ea;/* light gray */
+$txt-4: #505050;/* dark gray */
+$txt-5: #5f7390;/* light navy */
+$txt-6: #51515e;/* navy gray */
+$txt-7: #828181;/* gray */
+
+.txt-left {
+	text-align: left;
+}	
+.txt-right	{
+	text-align: right;
+}
+.txt-center {
+	text-align: center;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+
+
+// Fonts
+
+@include font-face("flare-light-gothic", font-files("flare-light-gothic.ttf"), "flare-light-gothic.eot");
+@include font-face("FranklinGothic-Book", font-files("FranklinGothic-Book.otf"), "FranklinGothic-Book.eot");
+@include font-face("ColabLig", font-files("ColabLig.otf"), "ColabLig.eot");
+@include font-face("Chunkfive", font-files("Chunkfive.otf"), "Chunkfive.eot");
+@include font-face("AlexandriaFLF-Bold", font-files("AlexandriaFLF-Bold.ttf"), "AlexandriaFLF-Bold.ttf.eot");
+@include font-face("ColabThi", font-files("ColabThi.otf"), "ColabThi.eot");
+@include font-face("ColabMed", font-files("ColabMed.otf"), "ColabMed.eot");
+@include font-face("ColabReg", font-files("ColabReg.ttf"), "ColabReg.eot");
+@include font-face("CONTRA__", font-files("CONTRA__.ttf"), "CONTRA__.eot");
+@include font-face("social-icons", font-files("social-icons.svg", "social-icons.eot?#iefix", "social-icons.woff", "social-icons.ttf"), "social-icons.eot");
+
+
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "social-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-twitter-circled:before { content: '\e800'; } /* '' */
+.icon-facebook-circled:before { content: '\e801'; } /* '' */
+.icon-linkedin-circled:before { content: '\e802'; } /* '' */
+
+
+* {
+	@include box-sizing(border-box);
+}
+
+body, html {
+  float: left;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  color: #555e58;
+  background: url(../images/gradientBG.png) no-repeat;
+  background-size: cover;
+}
+
+.pagewrap {
+  margin: 0 10%;
+  width: 80%;
+  height: auto;
+}
+
+.clearfix:after {
+  clear: both;
+  display: table;
+  content: '';
+  font-size: 0;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  color: #000;
+}
+
+li {
+  list-style: none;
+  font-family: "ColabThi";
+  font-size: 1em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1 {
+  font-family: "Chunkfive";
+  font-size: 2.5em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h2 {
+  font-family: "AlexandriaFLF-Bold";
+  font-size: 1.8em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h3 {
+  font-family: "ColabThi";
+  font-size: 1.5em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h4 {
+  font-family: "ColabThi";
+  font-size: 1em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h5 {
+  font-family: "ColabThi";
+  font-size: .8em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+p {
+  font-family: "ColabThi";
+  font-size: .9em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* COL */
+.three-col, .two-col {
+  overflow: auto;
+  margin-top: 3%;
+}
+
+.three-col > {
+  .col-one, .col-two, .col-three {
+    float: left;
+    width: 31.333%;
+    margin: 1%;
+  }
+  .col-one {
+    margin: 1% 2% 1% 0;
+  }
+}
+
+.two-col > {
+  .col-one, .col-two {
+    float: left;
+    width: 47.5%;
+  }
+  .col-one {
+    margin: 2% 2% 2% 0;
+  }
+  .col-two {
+    margin: 2% 0 2% 2%;
+  }
+}
+
+/* BUTTON */
+
+.button {
+  -moz-box-shadow: inset 0px 1px 0px 0px #6e9ad8;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #6e9ad8;
+  box-shadow: inset 0px 1px 0px 0px #6e9ad8;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2b68bd), color-stop(1, #174385));
+  background: -moz-linear-gradient(center top, #2b68bd 5%, #174385 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2b68bd', endColorstr='#174385');
+  background-color: #2b68bd;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+  text-indent: 0px;
+  border: 1px solid #6e9ad8;
+  display: inline-block;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  height: 40px;
+  line-height: 40px;
+  width: 153px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0px #072b73;
+  &:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #174385), color-stop(1, #2b68bd));
+    background: -moz-linear-gradient(center top, #174385 5%, #2b68bd 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#174385', endColorstr='#2b68bd');
+    background-color: #174385;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
+
+/* 3. CONTENT  =============================================== */
+
+/* HEADER */
+
+header {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  h1 {
+    margin: 4% 0 0 0;
+    a {
+      font-family: "flare-light-gothic", Georgia, serif;
+      font-size: 39px;
+      font-weight: 100;
+      padding-left: 2%;
+    }
+  }
+}
+
+span.subTitle {
+  font-family: "FranklinGothic-Book";
+  font-size: 17px;
+  font-weight: 100;
+  margin-left: 3%;
+}
+
+ul {
+  width: auto;
+  margin-top: 5%;
+}
+
+.nav li {
+  float: left;
+  width: auto;
+  display: inline;
+  a {
+    float: left;
+    width: auto;
+    text-decoration: none;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin: 0 1px;
+    color: #fff;
+    font-family: "ColabLig";
+    font-size: 17px;
+    &:hover {
+      background: #d2d2d5;
+      color: #161628;
+    }
+  }
+}
+
+/* CAROUSEL */
+
+.carousel {
+  width: 100%;
+  height: auto;
+  padding: 3% 5% 0% 5%;
+}
+
+.carouselInfo {
+  width: 35%;
+  height: auto;
+  margin: 5% 0;
+}
+
+.carouselImg {
+  width: 65%;
+  height: auto;
+  img {
+    width: 75%;
+    height: auto;
+  }
+}
+
+a {
+  &.prev, &.next {
+    position: absolute;
+    bottom: 296px;
+    width: 44px;
+    height: 44px;
+    text-indent: -9999px;
+    overflow: hidden;
+  }
+}
+
+.carousel a.button {
+  margin: 3% 0;
+}
+
+.button-shadow {
+  margin: 5% 0 0 43%;
+}
+
+.carousel a {
+  &.prev {
+    background: url(../images/arrow-left.png) no-repeat;
+    left: 10%;
+    top: 40%;
+  }
+  &.next {
+    background: url(../images/arrow-right.png) no-repeat;
+    left: auto;
+    right: 10%;
+    top: 40%;
+  }
+}
+
+
+/* FEATURES */
+
+.features {
+  width: 100%;
+  height: auto;
+  img {
+    width: 23.5%;
+    height: auto;
+    padding: 0 .5%;
+  }
+}
+
+.featuresIcon {
+  padding: 1% 3% 0 0;
+}
+
+.featuresCopy {
+  padding: 3% 0 0 0;
+}
+
+/* BANNER */
+
+.banner {
+  width: 100%;
+  height: 78px;
+  margin: 3% 0;
+  padding: 2% 25%;
+  border-top: 1px solid #dddee0;
+  border-bottom: 1px solid #dddee0;
+  background-image: -webkit-linear-gradient(left, rgba(231, 232, 234, 1) 5%, rgba(231, 232, 234, 0) 50%, rgba(231, 232, 234, 0) 50%, rgba(231, 232, 234, 1) 95%), url(../images/banner.png);
+  /*background: url(../images/banner.png) no-repeat;*/
+}
+
+/* DOWNLOAD */
+
+.download {
+  width: 100%;
+  height: auto;
+  margin: 3% 0;
+  padding: 0;
+  li a {
+    padding: 1% 0;
+  }
+  h4 {
+    margin-left: -17%;
+  }
+}
+
+.downloadImg {
+  width: 50%;
+  height: auto;
+}
+
+.downloadInfo {
+  width: 50%;
+  height: auto;
+  li {
+    position: relative;
+    background-image: url(../images/downloadBullet.png);
+    background-repeat: no-repeat;
+    background-position: .4em;
+    padding-left: 2.5em;
+    margin-bottom: 20px;
+  }
+}
+
+.downloadBtns {
+  padding: 0;
+  margin: 0 0 0 16%;
+  a {
+    margin: 0 5%;
+  }
+}
+
+.downloadList {
+  width: 100%;
+  height: auto;
+  li {
+    position: relative;
+    border-top: 1px solid #d7d8da;
+    background-image: url(../images/downloadListBullet.png);
+    background-repeat: no-repeat;
+    background-position: .4em;
+    padding: 1.5% 5%;
+    margin: 0 auto;
+    &:last-child {
+      border-top: 1px solid #d7d8da;
+      border-bottom: 1px solid #d7d8da;
+    }
+  }
+}
+
+/* FOOTER */
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 0 10%;
+}
+
+.quote {
+  width: 100%;
+  height: auto;
+  margin: .3% 0;
+  border-top: 1px solid #49495a;
+  border-bottom: 1px solid #49495a;
+}
+
+.twit1 {
+  font-size: 5em;
+}
+
+p.copy {
+  font-family: "CONTRA__";
+  padding: 1.5% 0;
+  color: #b2b2ba;
+}
+
+form {
+  max-width: 600px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+input, textarea {
+  border: 0;
+  outline: 0;
+  padding: 1em;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  font-family: 'ColabThi', sans-serif;
+  background-color: #242439;
+}
+
+.formfield {
+  box-shadow: inset 9px 8px 6px -6px #12121d;
+  -webkit-box-shadow: inset 9px 8px 6px -6px #12121d;
+  -moz-box-shadow: inset 9px 8px 6px -6px #12121d;
+  -o-box-shadow: inset 9px 8px 6px -6px #12121d;
+}
+
+.half {
+  float: left;
+  width: 48%;
+  margin-bottom: 1em;
+}
+
+.right {
+  width: 50%;
+}
+
+.left {
+  margin-right: 2%;
+}
+
+textarea {
+  height: 126px;
+}
+
+#email {
+  width: 70%;
+}
+
+.col-one input:nth-of-type(2) {
+  margin-top: -8.5%;
+}
+
+.submit {
+  background-color: #ffffff;
+  -webkit-border-top-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  border-bottom-left-radius: 8px;
+  text-indent: 0px;
+  border: 1px solid #dcdcdc;
+  display: inline-block;
+  color: #363648;
+  font-family: arial;
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  height: 34px;
+  line-height: 34px;
+  width: 105px;
+  text-decoration: none;
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  float: right;
+}
+
+.socialicon {
+  margin: 25% 0;
+  font-size: 3em;
+  color: #464659;
+}
+
+.footnote {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}

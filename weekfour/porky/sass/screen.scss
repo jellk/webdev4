@@ -1,0 +1,599 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass";
+@import "normalize";
+
+
+// Variables 
+$txt-white: #ffffff;
+$txt-black: #000000;
+$txt-green: #9ec9ac;
+$txt-blue: #3694a7;
+$txt-brown: #80726b;
+$txt-light-brown: #918680;
+$bg-green: #9ec9ac;
+$bg-dark-gray: #202020;
+$bg-yellow: #ffce10;
+$bg-orange: #f3614c;
+$border-gray: #636363;
+$border-dark-gray: #333333;
+
+
+
+
+@include font-face("social-icons", font-files("social-icons.svg", "social-icons.eot?#iefix", "social-icons.woff", "social-icons.ttf"), "social-icons.eot");
+
+
+* {
+	@include box-sizing(border-box);
+}
+
+
+body,
+html {
+	position: relative;
+	margin: 0 auto;
+	padding: 0;
+
+}
+
+.pageWrapper {
+	margin: 0 auto;
+	width: 100%;
+	height: auto;
+}
+
+.clearfix:after {
+	clear: both;
+	display: table;
+	content: '';
+	font-size: 0;
+}
+
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Lato";
+	font-weight: normal;
+	color: $txt-black;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3.75em;
+}
+
+h2 {
+	font-size: 2.5em;
+}
+
+h3 {
+	font-size: 0.875em;
+	color: $txt-white;
+}
+
+h4 {
+	font-size: 1.3em;
+}
+
+h5 {
+	font-size: 1.275em;
+}
+
+h6 {
+	font-size: 1.1em;
+}
+
+p {
+	font-family: "Helvetica Neue";
+	font-size: 16px;
+	color: $txt-black;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	position: relative;
+	color: $txt-black;
+}
+
+li {
+	list-style: none;
+}
+
+/* LAYOUT */
+
+section {
+  height: auto;
+  overflow: hidden;
+}
+
+.three-col, .two-col {
+  margin-top: 25px;
+}
+
+.three-col > {
+  .col-one, .col-two, .col-three {
+    float: left;
+    width: 31.333%;
+    margin: 1%;
+  }
+  .col-one {
+    margin: 1% 2% 1% 0;
+  }
+  .col-three {
+    margin: 1% 0 1% 2%;
+  }
+}
+
+.two-col > {
+  .col-one, .col-two {
+    float: left;
+    width: 47.5%;
+  }
+  .col-one {
+    margin: 2% 2% 2% 0;
+  }
+  .col-two {
+    margin: 2% 0 2% 2%;
+  }
+}
+
+.three-col img {
+  width: 100%;
+  height: auto;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+/* RIBBON */
+
+.ribbonWrapper {
+  display: block;
+  position: relative;
+  z-index: 0;
+  margin: 20px -125px;
+}
+
+.ribbon, .btn {
+  display: inline-block;
+  color: $bg-dark-gray;
+  background-color: $bg-yellow;
+  position: relative;
+  text-align: center;
+  padding: 11px 5px;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.ribbon {
+  &:before {
+    left: -31px;
+    border: 20px solid #fc3;
+    border-left-color: transparent;
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    z-index: -1;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    z-index: -1;
+    right: -20px;
+    border-left-width: 20px;
+    border-right-color: transparent;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #fc3;
+  }
+}
+
+/* 3. CONTENT  =============================================== */
+
+/* HEADER */
+
+.mainHeader, footer {
+  width: 100%;
+  height: 307px;
+  background-color: $bg-orange;
+  text-align: center;
+  padding: 0 15%;
+}
+
+.headerImg {
+  float: left;
+  margin: 4.2% auto;
+  padding: 0;
+  width: 17.5%;
+  height: auto;
+}
+
+.headerInfo {
+  padding: 3% 0 0 0;
+  margin: 0 33%;
+  width: 65%;
+  height: auto;
+  h1 {
+    font-size: 53px;
+  }
+  p {
+    margin: 3% 0 0 0;
+    font-size: 18px;
+  }
+}
+
+p.icon-star {
+  margin: 4% -14%;
+  padding: 0;
+}
+
+/* NAVIGATION */
+
+.mainNav ul {
+  list-style: none;
+  padding: 0 10%;
+  margin: 0 auto;
+  background: $bg-dark-gray;
+  width: 100%;
+  height: 48px;
+  position: relative;
+  li {
+    font-family: "Helvetica Neue";
+    font-size: 16px;
+    color: $txt-white;
+    display: inline-block;
+    border-left: dashed 1px $border-gray;
+    padding: 14px 0;
+    &:last-child {
+      border-right: dashed 1px $border-gray;
+    }
+    a {
+      padding: 0 30px;
+      text-decoration: none;
+      color: $txt-white;
+      margin: 0 auto;
+      text-align: center;
+      &:hover, &:active {
+        color: $txt-green;
+      }
+    }
+    &:nth-child(3) {
+      margin-right: 80px;
+      border-right: dashed 1px $border-gray;
+    }
+    &:nth-child(4) {
+      padding-left: 103px;
+    }
+  }
+}
+
+.icon-top {
+  position: relative;
+  img {
+    position: absolute;
+    top: -14px;
+	left: -123px;
+  }
+}
+
+/* INNER WRAPPER */
+
+.innerWrapper {
+  width: 80%;
+  padding-top: 40px;
+  margin: 0 10%;
+  img {
+    width: 100%;
+  }
+}
+
+/* SECTION ONE: WORK */
+
+.sec-header {
+  border-top: 1px dashed $border-dark-gray;
+  border-bottom: 1px dashed $border-dark-gray;
+  margin: 20px 15%;
+  text-align: center;
+  padding: 2em 0;
+  width: 70%;
+  h4 {
+    color: $txt-brown;
+    width: 70%;
+  }
+  h2 {
+    margin: -3% 0 2% 0;
+  }
+}
+
+.mtv {
+  background-color: $bg-green;
+  overflow: hidden;
+  .headerImg {
+    padding: 14% 8%;
+    width: auto;
+  }
+  article {
+    float: right;
+    width: 46%;
+    padding: 2%;
+    height: auto;
+  }
+}
+
+.blog article {
+  float: right;
+  width: 46%;
+  padding: 2%;
+  height: auto;
+}
+
+article .ribbonWrapper {
+  margin: 17% 30%;
+}
+
+.mini-copy, .copy, .important {
+  color: $txt-black;
+  text-align: left;
+  line-height: 2em;
+}
+
+figcaption h6, .copyTitle, .blogTitle {
+  text-align: left;
+  color: #004a59;
+  padding-top: 5%;
+}
+
+p.mini-copy {
+  font-size: .82em;
+  padding: 5% 0;
+}
+
+.btn {
+  width: 400px;
+  height: auto;
+  margin: 7% 27%;
+  a {
+    padding: 2% 0;
+    margin: 0 auto;
+  }
+}
+
+
+/* SECTION TWO: NEWS */
+.three-col h4,
+.two-col h4,
+.news figcaption,
+.blogTitle {
+	color: $txt-blue;
+}
+
+p.copy,
+p.important {
+	font-size: 1em;
+	padding: 5% 0;
+}
+
+.newsRibbon .ribbon {
+	margin: 16%;
+}
+
+/* SECTION THREE: BLOG */
+
+.blogTitle {
+  font-size: 1.7em;
+}
+
+.featured-blog {
+  overflow: hidden;
+  .headerImg {
+    padding: 0 4%;
+    width: auto;
+  }
+}
+
+.recent-art {
+  text-align: left;
+}
+
+.thin h6 {
+  text-transform: uppercase;
+  font-size: 14px;
+  padding-top: 5%;
+}
+
+/* SECTION FOUR: ABOUT */
+
+p.important {
+  color: #ff6146;
+}
+
+.about {
+  background: url(../images/bg-about.gif) 100% 100% no-repeat;
+  background-position-x: 110%;
+  background-position-y: 70%;
+}
+
+/* SECTION FIVE: NETWORK */
+
+.network.three-col {
+  padding: 5% 0;
+}
+
+/* SECTION SIX: CONTACT*/
+
+.bg-cta {
+  background-color: $bg-yellow;
+}
+
+.contact {
+  h5 {
+    text-align: left;
+    padding: 5% 0 .5% 0;
+  }
+  h6 {
+    color: $txt-brown;
+    text-align: left;
+    font-size: .80em;
+    text-transform: uppercase;
+  }
+}
+
+/* FOOTER */
+
+footer {
+  height: auto;
+}
+
+.social {
+  margin: -4% -65%;
+  a {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+address, .social a {
+  font-size: .75em;
+  font-style: normal;
+  margin: 1em 0;
+}
+
+.ftr-contact {
+  margin: -4% -15%;
+}
+
+.form {
+  float: left;
+  border-radius: 10px;
+  background: $txt-white;
+  padding: 2em;
+  width: 340px;
+}
+
+.more-info .ribbon {
+  margin: 2% 0 0 0;
+}
+
+.questions {
+  margin: 0 0 0 10%;
+}
+
+.thankYou {
+  padding: 3% 0;
+  h3 {
+    font-size: 1.5em;
+  }
+}
+
+.footnote {
+  .col-one {
+    margin: -1.5% 0;
+    padding: 0 10%;
+  }
+  .col-two {
+    margin: -1.5% 0;
+    float: right;
+    padding: 0 17%;
+  }
+  background-color: $bg-dark-gray;
+  width: 100%;
+  height: auto;
+  padding: 3%;
+  color: $txt-light-brown;
+  text-transform: uppercase;
+  a {
+    color: $txt-light-brown;
+  }
+  img {
+    float: right;
+    margin: -24% -50%;
+    padding: 0;
+  }
+}
+
+/* ICON FONTS */
+
+.icon-down {
+  text-align: right;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.icon-star {
+  color: $txt-black;
+}
+
+.icon-facebook-circled, .icon-twitter-circled {
+  color: $txt-white;
+  font-size: 1.3em;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "social-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-down:before {
+  content: '\e800';
+}
+
+/* '' */
+
+.icon-star:before {
+  content: '\e801';
+}
+
+/* '' */
+
+.icon-right:before {
+  content: '\e802';
+}
+
+/* '' */
+
+.icon-twitter-circled:before {
+  content: '\e803';
+}
+
+/* '' */
+
+.icon-facebook-circled:before {
+  content: '\e804';
+}
+
+/* '' */
