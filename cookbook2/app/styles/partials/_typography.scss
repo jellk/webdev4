@@ -1,0 +1,41 @@
+@mixin font-face($style-name, $file, $family, $category:"") {
+    $filepath: "fonts/" + $family + "/" + $file;
+    @font-face {
+        font-family: "#{$style-name}";
+        src: url($filepath + ".eot");
+        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), url($filepath + ".woff") format('woff'), url($filepath + ".ttf")  format('truetype'), url($filepath + ".svg#" + $style-name + "") format('svg');
+    }
+    %#{$style-name} {
+        font: {
+            @if $category != "" {
+                family: "#{$style-name}", #{$category};
+            }
+            @else {
+                family: "#{$style-name}";
+                weight: normal;
+            }
+        }
+    }
+}
+
+@font-face {
+  font-family: KGTangledUpInYou;
+  src: url('../fonts/KGTangledUpInYou.ttf');
+}
+
+a {
+  color: #d0a41f;
+  text-shadow: 2px 1px 2px #c03e3e;
+  text-transform: uppercase;
+  &:hover, &:focus {
+    color: #c03e3e;
+    text-shadow: 2px 1px 2px #d0a41f;
+    text-decoration: none;
+
+  }
+}
+
+p {
+  color: #fff;
+  line-height: 1.6em;
+}

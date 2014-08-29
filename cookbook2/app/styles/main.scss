@@ -1,0 +1,232 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+// endbower
+// @import "partials/colors";
+@import "partials/typography";
+@import "partials/figures";
+
+/* _________________________________________
+CONTENT:  Cookbook
+AUTHOR:   Praeophan Khongkraphan
+____________________________________________
+
+TABLE OF CONTENTS:
+
+1. HEADING - Site name, logo, main menu
+2. SIDEBAR - Submenu, searchbar, subsidiary navigation, utility links
+3. MAINCONTENT - Articles, posts, comments, images
+4. FOOTER - Copyright, text links
+
+
+========================================================== */
+
+body {
+  background: url('../images/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.row {
+  margin: 0 10%;
+}
+
+header {
+  width: 4em;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  transition: .32s ease-out;
+  z-index: 11;
+  background: #c03e3e;
+  a {
+    color: #fff;
+  }
+  @media (max-width: 768px) {
+    height: 4em;
+  }
+}
+
+.navBtn {
+  color: #fff;
+}
+
+.toggle {
+  width: 312px;
+  @media (max-width: 768px) {
+    width: 93%;
+    height: 312px;
+  }
+}
+
+.reveal {
+  opacity: 1;
+  left: 0;
+}
+
+nav {
+  padding-left: 360px;
+  overflow: hidden;
+  position: absolute;
+  transition: .3s ease-out;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  a {
+    float: left;
+    padding: 1px 0;
+    opacity: .6;
+    width: 100%;
+    transition: .3s ease;
+    font-family: 'KGTangledUpInYou';
+    font-size: 2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 2em;
+    &:hover {
+      color: #d0a41f;
+      text-decoration: none;
+      opacity: 1;
+      text-shadow: none;
+    }
+  }
+}
+
+.current {
+  opacity: 1;
+}
+
+.toggle {
+  .navBtn {
+    opacity: 1;
+  }
+  nav {
+    padding-left: 60px;
+    opacity: 1;
+  }
+}
+
+.navBtn {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 700;
+  margin: 30px 0 0;
+  width: 100%;
+  text-align: center;
+  line-height: 1em;
+  -webkit-transform: rotate(0deg);
+  transition: .3s ease-out;
+  display: block;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1000001;
+  opacity: .5;
+  left: 0;
+  @media (max-width: 768px) {
+    margin: 10px 0 0;
+  }
+}
+
+.toggle .navBtn {
+  -webkit-transform: rotate(224deg);
+  color: #fff;
+  left: -100px;
+  @media (max-width: 768px) {
+    left: 0;
+  }
+}
+
+.navBtn:hover {
+  opacity: 1;
+}
+
+.logo {
+  width: 50%;
+  height: auto;
+  margin: 0 25%;
+  img {
+    width: 100%;
+    height: auto;
+    padding: 3% 0;
+
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.pagination > {
+  li > {
+    a, span {
+      color: #c03e3e;
+      background-color: white;
+      border: 1px solid #dddddd;
+      text-shadow: none;
+    }
+    a {
+      &:hover, &:focus {
+        color: white;
+        background-color: #d0a41f;
+        border-color: #dddddd;
+        text-shadow: none;
+      }
+    }
+    span {
+      &:hover, &:focus {
+        color: white;
+        background-color: #d0a41f;
+        border-color: #dddddd;
+        text-shadow: none;
+      }
+    }
+  }
+  .active > {
+    a {
+      z-index: 2;
+      color: white;
+      background-color: #d0a41f;
+      border-color: white;
+      cursor: default;
+      text-shadow: none;
+      &:hover, &:focus {
+        z-index: 2;
+        color: white;
+        background-color: #d0a41f;
+        border-color: #d0a41f;
+        cursor: default;
+        text-shadow: none;
+      }
+    }
+    span {
+      z-index: 2;
+      color: white;
+      background-color: #d0a41f;
+      border-color: #d0a41f;
+      cursor: default;
+      text-shadow: none;
+      &:hover, &:focus {
+        z-index: 2;
+        color: white;
+        background-color: #d0a41f;
+        border-color: white;
+        cursor: default;
+        text-shadow: none;
+      }
+    }
+  }
+}
+.img-responsive {
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+}
+
+

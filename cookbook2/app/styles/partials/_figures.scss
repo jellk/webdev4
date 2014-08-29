@@ -1,0 +1,68 @@
+
+figure {
+  margin: 0;
+  position: relative;
+  img {
+    display: block;
+    position: relative;
+    z-index: 10;
+    max-width: 100%;
+    height: auto;
+  }
+  figcaption {
+    display: block;
+    position: absolute;
+    z-index: 5;
+  }
+  h3 {
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  span {
+    color: #b2cce1;
+    display: block;
+    line-height: 1.2;
+  }
+  a.close-caption {
+    display: block;
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    font-size: 24px;
+    font-weight: 700;
+    &.hidden {
+      display: none;
+    }
+  }
+}
+#effect-1 {
+  a.close-caption {
+    bottom: 10px;
+    right: 10px;
+  }
+  figure {
+    background-color: #3f1e19;
+  }
+  figcaption {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  figcaption a:hover {
+    color: #fff;
+    text-shadow: none;
+  }
+  figure img {
+    transition: all 0.3s;
+  }
+}
+
+.no-touch #effect-1 figure:hover img, #effect-1 figure.hover img {
+  transform: translateY(-40px);
+}
