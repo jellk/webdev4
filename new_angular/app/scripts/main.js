@@ -10,17 +10,14 @@ myApp.controller("formCtrl",["$scope", function($scope){
     }
   }
 
-  // set this as default, so it any elements that watch this are OK on load 
      $scope.searchText = "";
 
-     // if you want to be able to undo an edit, you need a container to store it
      $scope.selectedItem = {
          "name": "",
          "department": "",
          "imageNum": -99
      };
 
-     // our test data, generated from http://www.generatedata.com/
      $scope.items = [
          {
              "name": "Lester The Cat Molester",
