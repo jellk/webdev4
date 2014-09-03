@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" data-ng-app="myApp" data-ng-controller="formCtrl">
+    <head>
+        <meta charset="utf-8">
+        <title>new_angular</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <header>
+                <h1>Employee Directory</h1>
+                <div>
+                    <div class="form-group">
+                        <label>
+                            Filter Results: 
+                            <input data-ng-model="searchText" class="form-control" type="search" placeholder="Type name, email, or department" />
+                            <button data-ng-click="searchText = ''" data-ng-show="searchText != ''" type="button" class="close" aria-hidden="true">&times;</button>
+                        </label>
+                    </div>
+                </div>
+            </header>
+            
+            <ul class="row">
+                <li data-ng-repeat="item in items | filter:searchText" class="col-3">
+                    <h3>{{item.name}}</h3>
+
+                    <div class="image-container">
+                        <img data-ng-src="http://lorempixel.com/200/200/cats/{{item.imageNum}}" />
+                    </div>
+                    
+                    <h5>{{item.email}}</h5>
+                    <p>{{item.department}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <section class="newsletter">
+                <header>
+                    <h1>
+                        <span class="header_script">
+                            Subscribe to our monthly 
+                        </span>Newsletter
+                    </h1>
+                </header>
+                <form role="form" name="form" id="contact-form" data-ng-submit="submitForm()" novalidate>
+                    <div class="form-group">
+                        <fieldset>
+                            <label for="FirstName">First Name:</label>
+                            <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="Enter first name" data-ng-model="firstName" required />
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset>
+                            <label for="LastName">Last Name:</label>
+                            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Enter last name" data-ng-model="lastName" required />
+                        </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <fieldset>
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="EmailAddress" name="EmailAddress" placeholder="Gimme yo email" data-ng-model="emailAddress" data-ng-model-options="{ updateOn: 'blur' }" required />
+                        </fieldset>
+                        <div data-ng-show="form.EmailAddress.$dirty && form.EmailAddress.$invalid">Invalid:
+                            <span data-ng-show="form.EmailAddress.$error.required">
+                                Tell us your email.
+                            </span>
+                            <span data-ng-show="form.EmailAddress.$error.email">
+                                This is not a valid email.
+                            </span>
+                        </div>
+                     </div>
+
+                    <button type="submit" class="btn btn-default" data-ng-disabled="form.$invalid" data-ng-model="submitButton"/>Subscribe</button>
+                </form>
+            </section>
+        </div>
+
+
+
+
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
